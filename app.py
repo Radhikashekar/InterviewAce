@@ -1,27 +1,56 @@
+import random
+
 topics= ["python","Git","Linux","Exit"]
 
 questions = {
-              "python":"""What is Python?
-              
-              A. Database
-              B. programming Language
-              C. Operating system
-              D. Browser""",
+              "python": [
+                  
+                   """What is python
 
-            "Git":"""What is git?
-            
-            A. Database
-            B. Version Control System
-            C. Operating System
-            D. Web Broser""",
+                  A.Database
+                  B.programming language
+                  C.operating System
+                  D.Browser""",
 
-            "Linux":"""What is linux?
+                    """which keyword is used to define function?
+
+                  A. func
+                  B. define
+                  C. def
+                  D. function""",
+
+                  """Which loop continues until a condition becomes False?
+
+                  A. for
+                  B. while
+                  C. if
+                  D. switch""",     
+              ],
+
+              "Git": [
+                  
+              """What is git?
             
-            A. Programming language
-            B. Operating System
-            C. Database
-            D.Browser""",
+                  A. Database
+                  B. Version Control System
+                  C. Operating System
+                  D. Web Browser""",
+              ],
+
+              "Linux": [
+                
+              """What is linux?
+            
+                  A. Programming language
+                  B. Operating System
+                  C. Database
+                  D.Browser""",
+                
+              ],
+                
 }
+
+score = 0
 
 
 
@@ -29,11 +58,10 @@ def ask_question(topic, correct_answer):
     global score
 
     print(f"\n{topic} Interview")
-    print(questions[topic])
+    print(random.choice(questions[topic]))
 
     answer = input("Enter your answer(A/B/C/D):").upper()
 
-    score = 0
 
     if answer == correct_answer :
             score += 1
@@ -70,5 +98,6 @@ while running:
      running = False
 
   else:
-    print("Inavlid choice")
+    print("inavlid choice")
+  
     
